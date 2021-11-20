@@ -4,11 +4,12 @@ import 'firebase/compat/firestore';
 import 'firebase/compat/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import {auth, db, SignIn} from '../firebase'
-import extractWords  from "../assets/words";
 import ReactWordcloud from 'react-wordcloud';
+import extractWords from "../assets/words";
+ 
 
 
-function WorldCloud() {
+function WordCloud() {
 
   return (
     <div className="Chat">
@@ -23,8 +24,8 @@ function ChatRoom() {
   const messagesRef = db.collection('comments2');
 
   const query = messagesRef.orderBy('createdAt').limit(25);
+
   const [messages] = useCollectionData(query, {idField: 'id'});
-  console.log("MES",messages)
   const [formValue, setFormValue] = useState('');
   const sendMessage = async(e) => {
     e.preventDefault();
@@ -35,6 +36,7 @@ function ChatRoom() {
     })
     setFormValue('');
   }
+  console.log("linear",messages)
 
   return (
     <div>
@@ -43,8 +45,7 @@ function ChatRoom() {
           <input  value = {formValue} onChange = {(e) => setFormValue(e.target.value)}/>
           <button type = "submit" >Send</button>
         </form>
-        <ReactWordcloud words={extractWords(messages)}/>
-
+            <ReactWordcloud words={extractWords(messages)}/>
     </div>
   )
 }
@@ -58,4 +59,4 @@ function ChatMessage(props) {
   }
 
 
-export default WorldCloud;
+export default WordCloud;

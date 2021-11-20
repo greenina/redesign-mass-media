@@ -33,6 +33,7 @@ function ChatRoom() {
     })
     setFormValue('');
   }
+  console.log("linear",messages)
 
   return (
     <div>
