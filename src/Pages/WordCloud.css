@@ -1,0 +1,20 @@
+#comments{
+    display: flex;
+    flex-direction: column;
+    /* text-align: center; */
+}
+#wordcloud{
+    background-color: aqua;
+}
+#related{
+    background-color: blue;
+}
+#article{
+    background-color: bisque;
+}
+#commentlist{
+    background-color: blueviolet;
+}
+#submit{
+    background-color: brown;
+}

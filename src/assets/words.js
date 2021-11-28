@@ -8,7 +8,6 @@ const extractWords = (arr)=>{
             counts[x] = (counts[x] || 0) + 1;
          });
     })
-    console.log("COUNTS",counts)
     return Object.keys(counts).map(count =>{
         return {text:count, value:counts[count]}
     })
