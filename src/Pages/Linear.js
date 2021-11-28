@@ -4,13 +4,21 @@ import 'firebase/compat/firestore';
 import 'firebase/compat/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import {auth, db, SignIn} from '../firebase'
+import Comment from '../Components/Comment'
+import Article from "../Components/Article";
+import TextField from '@mui/material/TextField';
 
 
 function Linear() {
 
   return (
-    <div className="Chat">
+    <div id="Chat">
+      <div id="article">
+        <Article/>
+      </div>
+      <div>
         <ChatRoom/>
+      </div>
     </div>
   );
 }
@@ -37,9 +45,10 @@ function ChatRoom() {
 
   return (
     <div>
-        {messages && messages.map(msg => <ChatMessage  key = {msg.id} message = {msg}/>)}
-        <form onSubmit = {sendMessage}>
-          <input  value = {formValue} onChange = {(e) => setFormValue(e.target.value)}/>
+        {messages && messages.map(msg => <Comment  key = {msg.id} message = {msg}/>)}
+        <form id="submit" onSubmit = {sendMessage}>
+          <TextField fullWidth label="leave comments" value = {formValue} id="fullWidth" onChange = {(e) => setFormValue(e.target.value)} />
+          {/* <input  value = {formValue} onChange = {(e) => setFormValue(e.target.value)}/> */}
           <button type = "submit" >Send</button>
         </form>
     </div>
@@ -47,12 +56,6 @@ function ChatRoom() {
 }
 
 
-function ChatMessage(props) {
-  console.log("Props",props)
-    return(
-        <div>{props.message.text}</div>
-    )
-  }
 
 
 export default Linear;
