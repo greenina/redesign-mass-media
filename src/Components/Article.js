@@ -10,15 +10,16 @@ const Article = () =>{
             <h1 id="title">KAIST moves its campus to Seoul, celebrating it's 50th anniversary</h1>
             <div id="content">
                 <div><img src={nupjuk}/></div>
-                <p>Korea Advanced Institute of Science and Technology (KAIST), currently located in Daejeon, is considering  relocation to Seoul for its upcoming 50th anniversary. As KIST, the forerunner of KAIST remains in Seoul, people are on board with the idea that KAIST must also be located in Seoul to take a greater leap in becoming the forefront of science and technology.  
+                <p>The Korea Advanced Institute of Science and Technology and KAIST, located in Daejeon, are considering relocating campus to Seoul to mark the 50th anniversary of its opening. The intention is that KIST, the Korea Institute of Science and Technology, the beginning of KAIST, started in Seoul and remains in Seoul, and for KAIST to make a bigger leap forward, it must resume its previous position. 
                     <br/><br/>
-                The president of KAIST revealed what the relocation would bring at the 50th anniversary ceremony. He mentioned that the most of the enterprises are located around Seoul. To encourage strong cooperation between KAIST and the enterprises, it it important that KAIST be located in Seoul. 
-                <br/> <br/>
+                At the 50th anniversary ceremony of KAIST, the president said, "The expectations through the relocation of the campus are as follows.
+First, most of the major domestic companies are located in the metropolitan area. To encourage industry-academic cooperation between KAIST and companies, it is advantageous to be located in Seoul, which is close to major companies.
 Second, the stress index directly affects the academic achievement of college students. In particular, relieving stress is essential for KAIST students who are suffering from assignments and studies, and cultural life in Seoul will relieve students' stress and increase their academic achievement. 
+
 
 <br/><br/>
                 
-                The cost of relocating to the KAIST campus to Seoul is estimated to be astronomical. It is questionable whether such a bold decision by KAIST will be carried out as planned with still divided opinions among students. 
+                The cost of relocating to the KAIST campus to Seoul is estimated to be astronomical. It is questionable whether such a bold decision by KAIST will be carried out as planned with still divided opinions among students.
                 </p>
             </div>
            

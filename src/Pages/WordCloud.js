@@ -58,9 +58,9 @@ function ChatRoom() {
   const callbacks = {
     //getWordColor: word => word.value > 50 ? "blue" : "red",
     onWordClick: word =>  setWordKey(word.text),
-    onWordMouseOver: word =>  {
-    },
-    getWordTooltip: word => `${word.text} (${word.value}) [${word.value > 50 ? "good" : "bad"}]`,
+    // onWordMouseOver: word =>  {
+    // },
+    // getWordTooltip: word => `${word.text} (${word.value}) [${word.value > 50 ? "good" : "bad"}]`,
   }
 
   const options = {
@@ -86,13 +86,13 @@ function ChatRoom() {
           callbacks={callbacks}
           />
         </div>
-              <div id="submit2">
-        <form id="submit" onSubmit = {sendMessage}>
-          <TextField fullWidth label="leave comments" value = {formValue} id="fullWidth" onChange = {(e) => setFormValue(e.target.value)} />
-          {/* <input  value = {formValue} onChange = {(e) => setFormValue(e.target.value)}/> */}
-          <button type = "submit" >Send</button>
-        </form>
-      </div>  
+        <div id="submit2">
+          <form id="submit" onSubmit = {sendMessage}>
+            <TextField fullWidth label="leave comments" value = {formValue} id="fullWidth" onChange = {(e) => setFormValue(e.target.value)} />
+            {/* <input  value = {formValue} onChange = {(e) => setFormValue(e.target.value)}/> */}
+            <button type = "submit" >Send</button>
+          </form>
+        </div>  
       <div id="related">
         <div>Related Comments</div>
         {messages && messages.map(msg => {

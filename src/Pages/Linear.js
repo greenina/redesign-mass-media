@@ -7,6 +7,10 @@ import {auth, db, SignIn} from '../firebase'
 import Comment from '../Components/Comment'
 import Article from "../Components/Article";
 import TextField from '@mui/material/TextField';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import ListSubheader from '@mui/material/ListSubheader';
 
 
 function Linear() {
@@ -55,11 +59,23 @@ function ChatRoom() {
 
   return (
     <div>
-          <form id="submit" onSubmit = {sendMessage}>
+          
+        <List subheader={<li />} sx={{
+        width: '100%',
+        // maxWidth: 360,
+        bgcolor: 'background.paper',
+        position: 'relative',
+        overflow: 'auto',
+        maxHeight: 300,
+        '& ul': { padding: 0 },
+      }}>
+          {messages && messages.map(msg => <Comment  key = {msg.id} message = {msg}/>)}
+        </List>
+        <form id="submit" onSubmit = {sendMessage}>
             <TextField fullWidth label="leave comments" value = {formValue} id="fullWidth" onChange = {(e) => setFormValue(e.target.value)} />
             <button type = "submit" >Send</button>
         </form>
-        {messages && messages.map(msg => <Comment  key = {msg.id} message = {msg}/>)}
+        
 
     </div>
   )
