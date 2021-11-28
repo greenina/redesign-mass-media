@@ -8,9 +8,7 @@ import Comment from '../Components/Comment'
 import Article from "../Components/Article";
 import TextField from '@mui/material/TextField';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import ListSubheader from '@mui/material/ListSubheader';
+import './Linear.css'
 
 
 function Linear() {
@@ -66,7 +64,7 @@ function ChatRoom() {
         bgcolor: 'background.paper',
         position: 'relative',
         overflow: 'auto',
-        maxHeight: 300,
+        maxHeight: 200,
         '& ul': { padding: 0 },
       }}>
           {messages && messages.map(msg => <Comment  key = {msg.id} message = {msg}/>)}
@@ -75,6 +73,9 @@ function ChatRoom() {
             <TextField fullWidth label="leave comments" value = {formValue} id="fullWidth" onChange = {(e) => setFormValue(e.target.value)} />
             <button type = "submit" >Send</button>
         </form>
+        <div id="activity">
+          TASK : After leaving at least 1 comment, visit <a href="https://docs.google.com/forms/d/18o6HtCb6s1r0-sgGPY3gR1G0LNLQUtWH0G0OpcYZ-7Y/viewform">here</a> and submit the form 🤗
+        </div>
         
 
     </div>

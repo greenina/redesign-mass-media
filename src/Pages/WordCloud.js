@@ -10,6 +10,7 @@ import Comment from '../Components/Comment'
 import Article from "../Components/Article";
 import TextField from '@mui/material/TextField';
 import './WordCloud.css'
+import List from '@mui/material/List';
 
 function WordCloud() {
 
@@ -95,6 +96,15 @@ function ChatRoom() {
         </div>  
       <div id="related">
         <div>Related Comments</div>
+        <List subheader={<li />} sx={{
+        width: '100%',
+        // maxWidth: 360,
+        bgcolor: 'background.paper',
+        position: 'relative',
+        overflow: 'auto',
+        maxHeight: 200,
+        '& ul': { padding: 0 },
+      }}>
         {messages && messages.map(msg => {
           if(msg.set){
             console.log("wordkey",wordKey)
@@ -105,7 +115,11 @@ function ChatRoom() {
             return <div>No corresponding<Comment  key = {msg.id} message = {msg} /></div>
           }
         })}
+        </List>
       </div>
+      <div id="activity">
+          TASK : After leaving at least 1 comment, visit <a href="https://docs.google.com/forms/d/1nosAGXKkAG02kXaSYxi1p4AxCCetk0VKPn4iXZhgDHE/viewform">here</a> and submit the form 🤗
+        </div>
       </div>
     </div>
   )
