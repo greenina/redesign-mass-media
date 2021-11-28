@@ -76,8 +76,8 @@ function ChatRoom() {
       {/* <div id="commentlist">
         {messages && messages.map(msg => <Comment  key = {msg.id} message = {msg} />)}
       </div> */}
-
-      Click the word you'd like to see!
+      Comment Word Cloud<br/>
+      Click the word you'd like to check!
       <div id="comments">
         <div id="wordcloud">
           <ReactWordcloud 

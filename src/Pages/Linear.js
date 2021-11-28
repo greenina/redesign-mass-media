@@ -32,25 +32,35 @@ function ChatRoom() {
 
   const [messages] = useCollectionData(query, {idField: 'id'});
   const [formValue, setFormValue] = useState('');
+  const [wordSet, setWordSet] = useState(new Set())
+  const [wordKey, setWordKey] = useState("")
+  
   const sendMessage = async(e) => {
     e.preventDefault();
-    console.log(formValue)
+    formValue.split(/(\s+)/).forEach(function (x) { 
+      if(x!=" " && x!=""){
+        wordSet.add(x)
+      }
+    });
+    setWordSet(wordSet)
     await messagesRef.add({
       text: formValue,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      set:Array.from(wordSet)
     })
     setFormValue('');
+    setWordSet(new Set())
   }
   console.log("linear",messages)
 
   return (
     <div>
-        {messages && messages.map(msg => <Comment  key = {msg.id} message = {msg}/>)}
-        <form id="submit" onSubmit = {sendMessage}>
-          <TextField fullWidth label="leave comments" value = {formValue} id="fullWidth" onChange = {(e) => setFormValue(e.target.value)} />
-          {/* <input  value = {formValue} onChange = {(e) => setFormValue(e.target.value)}/> */}
-          <button type = "submit" >Send</button>
+          <form id="submit" onSubmit = {sendMessage}>
+            <TextField fullWidth label="leave comments" value = {formValue} id="fullWidth" onChange = {(e) => setFormValue(e.target.value)} />
+            <button type = "submit" >Send</button>
         </form>
+        {messages && messages.map(msg => <Comment  key = {msg.id} message = {msg}/>)}
+
     </div>
   )
 }
