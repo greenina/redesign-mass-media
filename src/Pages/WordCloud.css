@@ -4,18 +4,23 @@
     /* text-align: center; */
 }
 #wordcloud{
-    background-color: aqua;
-    border: 3px solid green;
+    /* background-color: aqua; */
+    border: 3px solid gray;
 }
 #related{
     /* background-color: blue; */
     border: 1px solid gray;
+    /* height: 100px; */
 }
 #commentlist{
     background-color: blueviolet;
 }
 #submit{
-    background-color: brown;
+    /* background-color: brown; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: row;
 }
 #Chat{
     margin: 0 auto;
