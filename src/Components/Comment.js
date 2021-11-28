@@ -1,11 +1,12 @@
 import React from 'react'
 import './Comment.css'
+import user from '../assets/images/user.png'
 
 const Comment = (props) =>{
     return(
         <div class="commentBox">
-            <img src="../assets/images/user.png"/>
-            {props.message.text}
+            <div id="profile"><img src={user} width="50px"/></div>
+            <div id="text">{props.message.text}</div>
         </div>
     )
 }

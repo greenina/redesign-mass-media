@@ -1,5 +1,13 @@
 .commentBox{
     border: 1px;
     padding: 5px;
-    border-color: black;
+    border-color: gray;
+    display: flex;
+    flex-direction: row;
+}
+#text{
+    vertical-align: middle;
+    padding: 10px 0;
+    margin-left: 30px;
+    font-size: 20px;
 }

@@ -1,0 +1,9 @@
+/* #title{
+    text-align: center;
+} */
+#intro{
+    text-align: center;
+    border: 3px solid green;
+    margin: auto;
+    width: 60%;
+}

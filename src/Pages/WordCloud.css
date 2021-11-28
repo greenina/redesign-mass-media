@@ -5,16 +5,19 @@
 }
 #wordcloud{
     background-color: aqua;
+    border: 3px solid green;
 }
 #related{
-    background-color: blue;
-}
-#article{
-    background-color: bisque;
+    /* background-color: blue; */
+    border: 1px solid gray;
 }
 #commentlist{
     background-color: blueviolet;
 }
 #submit{
     background-color: brown;
+}
+#Chat{
+    margin: 0 auto;
+    width: 70%;
 }
